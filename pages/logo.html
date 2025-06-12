@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codigoCurioso.py - Instagram Logo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .instagram-logo {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-text {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: -1px;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .codigo {
+            background: linear-gradient(45deg, #00ff87, #60efff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .curioso {
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(96, 239, 255, 0.3);
+            display: block;
+        }
+
+        .py-extension {
+            background: linear-gradient(45deg, #60efff, #00ff87);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        .brackets {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 8rem;
+            font-weight: 300;
+            z-index: 0;
+        }
+
+        .bracket-left {
+            top: 20px;
+            left: 30px;
+        }
+
+        .bracket-right {
+            bottom: 20px;
+            right: 30px;
+        }
+
+        .logo-content {
+            z-index: 1;
+            position: relative;
+        }
+
+        .download-section {
+            text-align: center;
+            color: #333;
+        }
+
+        .download-btn {
+            margin: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #00ff87, #60efff);
+            border: none;
+            border-radius: 25px;
+            color: #1a1a2e;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin: 1rem auto;
+            width: fit-content;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 135, 0.3);
+        }
+
+        .preview-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        /* Versión alternativa - más compacta */
+        .compact-logo {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .compact-text {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .compact-codigo {
+            background: linear-gradient(45deg, #00ff87, #60efff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .compact-curioso {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(96, 239, 255, 0.3);
+        }
+
+        .compact-py {
+            background: linear-gradient(45deg, #60efff, #00ff87);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.3rem;
+            display: block;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-section">
+        <div class="preview-text">📱 Versión Cuadrada (Instagram Feed/Post)</div>
+        <div class="instagram-logo" id="square-logo">
+            <div class="brackets bracket-left">{</div>
+            <div class="logo-content">
+                <div class="main-text">
+                    <span class="codigo">codigo</span>
+                    <span class="curioso">Curioso</span>
+                    <span class="py-extension">.py</span>
+                </div>
+            </div>
+            <div class="brackets bracket-right">}</div>
+        </div>
+        <button class="download-btn" onclick="downloadLogo('square-logo', 'codigoCurioso-instagram-square')">Descargar Cuadrado</button>
+    </div>
+
+    <div class="download-section">
+        <div class="preview-text">⭕ Versión Circular (Instagram Profile Picture)</div>
+        <div class="compact-logo" id="circle-logo">
+            <div class="compact-text">
+                <span class="compact-codigo">codigo</span><span class="compact-curioso">Curioso</span>
+                <span class="compact-py">.py</span>
+            </div>
+        </div>
+        <button class="download-btn" onclick="downloadLogo('circle-logo', 'codigoCurioso-instagram-circle')">Descargar Circular</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function downloadLogo(elementId, filename) {
+            const element = document.getElementById(elementId);
+            const buttons = document.querySelectorAll('.download-btn');
+            const previews = document.querySelectorAll('.preview-text');
+            
+            // Ocultar todos los elementos de interfaz
+            buttons.forEach(btn => btn.style.display = 'none');
+            previews.forEach(preview => preview.style.display = 'none');
+            
+            html2canvas(element, {
+                backgroundColor: null,
+                scale: 3, // Alta resolución para Instagram
+                useCORS: true,
+                allowTaint: false,
+                width: 400,
+                height: 400
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = filename + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                // Mostrar elementos de nuevo
+                buttons.forEach(btn => btn.style.display = 'block');
+                previews.forEach(preview => preview.style.display = 'block');
+            }).catch(error => {
+                console.error('Error al generar la imagen:', error);
+                // Mostrar elementos de nuevo
+                buttons.forEach(btn => btn.style.display = 'block');
+                previews.forEach(preview => preview.style.display = 'block');
+                alert('Hubo un error al generar la imagen. Intenta de nuevo.');
+            });
+        }
+    </script>
+</body>
+</html>
